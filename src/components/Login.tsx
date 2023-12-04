@@ -1,5 +1,4 @@
 import React from 'react';
-import {useHistory} from 'react-router-dom';
 import {createClient} from '@supabase/supabase-js';
 import {SUPABASE_URL, SUPABASE_KEY} from '../lib/constants.ts';
 
@@ -11,7 +10,6 @@ const LoginPage: React.FC = () => {
   const [error, setError] = React.useState('');
 
 
-  const history = useHistory();
 
 
   const loginWithEmailAndPassword = async (event: React.FormEvent) => {
@@ -25,7 +23,6 @@ const LoginPage: React.FC = () => {
       });
       if (data) {
         console.log("Success:", data);
-        history.push('/home'); 
       }
   
       if (error) { 
